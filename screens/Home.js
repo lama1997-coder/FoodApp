@@ -12,7 +12,7 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import {COLORS, icons, images, FONTS, SIZES} from '../constants';
 
-const Home = () => {
+const Home = ({navigation}) => {
   /////////////////////////////////////////////////
   const initialCurrentLocation = {
     streetName: 'Kuching',
@@ -351,7 +351,9 @@ const Home = () => {
       <TouchableOpacity
         style={{
           paddingBottom: SIZES.padding * 2,
-        }}>
+        }}
+        onPress={()=>navigation.navigate('Restaurant' , {item,currentLocation})}
+        >
         <View style={{paddingBottom: SIZES.padding}}>
           <Image
             source={item.photo}
